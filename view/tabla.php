@@ -1,5 +1,5 @@
 <?php
-require_once "conexion.php";
+require_once "../class/conexion.php";
 $conexion = conexion();
 $sql = "SELECT * from t_productos";
 
