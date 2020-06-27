@@ -1,5 +1,5 @@
 <?php
-require_once "../class/conexion.php";
+require_once "class/conexion.php";
 $conexion = conexion();
 $sql = "SELECT * from t_productos";
 
@@ -8,11 +8,12 @@ $result = mysqli_query($conexion, $sql);
 $arraycodigos = array();
 ?>
 
-<table class="table">
+<table class="table" style="text-align: center;">
     <caption>Código de barras</caption>
     <tr>
         <td>Nombre</td>
         <td>Codigo de barras</td>
+        <td>Opciones</td>
     </tr>
     <?php while ($ver = mysqli_fetch_row($result)) :
         $arraycodigos[] = (string) $ver[2];
@@ -23,6 +24,10 @@ $arraycodigos = array();
             </td>
             <td>
                 <svg id='<?php echo "barcode" . $ver[2]; ?>'></svg>
+            </td>
+            <td>
+            <span class="btn btn-success">Editar</span>
+            <span class="btn btn-danger">Eliminar</span>
             </td>
         </tr>
     <?php endwhile; ?>
