@@ -27,7 +27,7 @@
         <p><br></p>
         <div class="row">
             <div class="col-sm-10">
-                <?php require_once "view/tabla.php" ?>
+                <?php require_once "table/tabla.php"; ?>
             </div>
         </div>
     </div>
